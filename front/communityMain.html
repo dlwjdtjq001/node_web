@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>웹프젝</title>
+        <style>
+            .btn{
+              text-decoration: none;
+              font-size:2rem;
+              color:white;
+              padding:10px 20px 10px 20px;
+              margin:20px;
+              display:inline-block;
+              border-radius: 10px;
+              transition:all 0.1s;
+              text-shadow: 0px -2px rgba(0, 0, 0, 0.44);
+              font-family: 'Lobster', cursive;
+            }
+            .btn:active{
+              transform: translateY(3px);
+            }
+            .btn.a{
+              background-color: #af1fdb;
+              border-bottom:5px solid #930c97;
+            }
+            .btn.a:active{
+              border-bottom:2px solid #930c97;
+            }
+        
+          </style>
+    </head>
+
+    <body>
+        main화면입니다.{{a}}
+        회원가입<br>
+        <a href = "http://localhost:5000/user">http://localhost:5000/user</a><br>
+
+        로그인<br>
+        <a href = "http://localhost:5000/auth/login">http://localhost:5000/auth/login</a><br>
+
+        유저 정보 확인<br>
+        <a href = "http://localhost:5000/user/list">http://localhost:5000/user/list</a><br>
+
+        로그아웃<br>
+        <a href = "http://localhost:5000/auth/logout">http://localhost:5000/auth/logout</a><br>
+
+        커뮤니티<br>
+        <a href = "http://localhost:5000/community">http://localhost:5000/community</a><br>
+
+        공부기입장<br>
+        <a href = "http://localhost:5000/study">http://localhost:5000/study</a><br>
+<br>
+
+        <p>
+            {% for list in edit %}
+            제목:{{list.title}} (작성자 {{list.userId}}) <br>
+            내용: {{list.description}}  <br>
+            ----------------------------------------------------------------<br>
+            {% endfor %}
+        </p>
+<br>
+        <a class="btn a" href = "http://localhost:5000/community/create">write</a><br>
+
+        <a class="btn a" href = "http://localhost:5000/community/update">update</a><br>
+    </body>
+
+</html>
